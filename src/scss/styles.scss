@@ -1,0 +1,220 @@
+// connect fonts
+@font-face {
+    font-family: 'AkrobatBold';
+    src: 
+     local('Akrobat Bold'),
+      local('Akrobat-Bold'),
+      url('../fonts/Akrobatbold.woff2') format('woff2'),
+       url('../fonts/Akrobatbold.woff') format('woff'),
+        url('../fonts/Akrobatbold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400&display=swap');
+
+// Variables
+$text-color: #42515b;
+$accent-color:#117af7;
+$bg-slider:#f2f5f7;
+$subtitle-font:'Ubuntu', sans-serif;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  font-size: 10px;
+}
+
+body {
+  font: 400 1.6rem/1.5 "AkrobatBold", sans-serif;
+  min-height: 100%;
+  color: $text-color;
+}
+header {
+  height: 11rem;
+
+  padding: 3rem;
+  padding-bottom: 11rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: $bg-slider;
+}
+
+// delete this ====
+.box1 {
+  height: 200vh;
+  width: 100vw;
+  background-color: grey;
+}
+.box2 {
+  height: 200vh;
+  width: 100vw;
+  background-color: green;
+}
+// =========
+.container--header {
+  max-width: 1400px;
+  margin: 0 auto;
+  // outline: 1px solid red;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  // outline: 2px dotted black;
+  align-items: center;
+  text-transform: uppercase;
+  &__wrap {
+    display: flex;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    align-items: center;
+    // outline: 2px solid blue;
+  }
+  &__item {
+    margin-right: 3rem;
+    &--cont {
+      margin:0 3rem;
+      // outline: 2px solid blue;
+
+    }
+
+  }
+  &__link {
+    text-decoration: none;
+    color: $text-color;
+    &--phone {
+      color: $accent-color;
+    }
+    &--btn {
+      padding: 1.7rem 2.7rem;
+      border: 2px solid $accent-color;
+      border-radius: 3.5rem;
+      color: $accent-color;
+    }
+  }
+
+}
+// collapse menu
+.menu-tog{ 
+  display: none;
+  &-item {
+    &1{}
+    &2{}
+    &3{}
+  }
+}
+@media screen and (max-width: 768px) {
+  header {
+  position: absolute;
+  }
+
+  // меню гамбургер на спанах старт scss
+  .menu-tog{ 
+    //background-color: #fff;
+    display: block;
+      width: 40px;
+      height: 42px;
+      position: fixed;
+      right: 15px;
+      top: 15px;
+      z-index: 20;
+
+
+    &-item {
+      display: block;
+      height: 3px;
+      background-color: #000;
+      width: 100%;
+      margin-top: 8px;
+      border-radius: 40%;
+      transition: all 0.6s ease;
+
+
+      &1{}
+      &2{}
+      &3{}
+    }
+  }
+  // меню гамбургер финиш scss
+    .menu__list{
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      display: block;
+      font-size: 2.5rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba($accent-color, 0.5);
+      transform: translate3d(100%,0,0,);
+      transition: all 0.5s ease 0.2s;
+      li {
+      display: block;
+      & + li {
+        border-top: 1px solid $text-color;
+      }
+        &:before {
+        display: none !important;
+        }
+        a {
+          display: block;
+          padding: 1em  !important;
+        }
+
+      }
+    }
+
+  
+}
+@media screen and (max-width: 1170px) {
+    .logo img {
+    display: none;
+  }
+  .logo {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background-image: url(../img/favicon.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition:all 1s;
+    transform: rotate(360deg);
+  }
+
+}
+.menu--opened {
+  .menu__list{
+    transform: translate3d(0,0,0,);
+
+  }
+  
+  // меню гамбургер старт scss
+  .menu-tog-item {
+    background-color: #fff;
+  }
+
+  .menu-tog-item1 {
+    transform: translate(0, 11px) rotate(45deg) ;
+    transform-origin: 20px 1px;   
+  }
+  .menu-tog-item2 {
+     background-color: transparent;
+  }
+  .menu-tog-item3 {
+    transform:  translate(0, -11px) rotate(-45deg);
+    transform-origin: 20px 1px;
+  }
+  // меню гамбургер end scss
+}
