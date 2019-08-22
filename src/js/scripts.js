@@ -7,7 +7,15 @@ $(document).ready(function(){
   //   } else {
   //     $('.logo').fadeIn();
   //   }
-  // })  
+  // })
+$('.slider').slick({
+  dots:true,
+  //slidesToShow: 2
+  infinite: false
+  
+  //easing:'swing'
+});
+
 
   $('.menu-tog').on('click',function(e){
     e.preventDefault();
@@ -23,3 +31,5 @@ $(document).ready(function(){
     })
 
 });
+
+

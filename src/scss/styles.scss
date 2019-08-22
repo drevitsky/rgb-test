@@ -1,3 +1,5 @@
+@import '_normalize';
+@import '_slick';
 // connect fonts
 @font-face {
     font-family: 'AkrobatBold';
@@ -47,18 +49,9 @@ header {
   background-color: $bg-slider;
 }
 
-// delete this ====
-.box1 {
-  height: 200vh;
-  width: 100vw;
-  background-color: grey;
-}
-.box2 {
-  height: 200vh;
-  width: 100vw;
-  background-color: green;
-}
-// =========
+
+
+
 .container--header {
   max-width: 1400px;
   margin: 0 auto;
@@ -217,4 +210,41 @@ header {
     transform-origin: 20px 1px;
   }
   // меню гамбургер end scss
+}
+
+// slick-slider
+
+.slider {}
+
+.slide {
+  &__wrap {
+    width: 1170px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+  }
+  &__col-3 {
+    width: 30%;
+  }
+  &__title {
+    font-size: 5rem;
+    text-transform: uppercase;
+
+  }
+  &__subtitle {
+    
+  }
+  &__btn {
+    text-transform: uppercase;
+    color: #fff;
+    background-color: $accent-color;
+    text-decoration: none;
+    padding: 17px 27px;
+    border-radius: 27px;
+  }
 }
